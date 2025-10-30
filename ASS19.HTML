@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript BMI</title>
+</head>
+
+<body>
+    <script>
+        function BMI() {
+            const name = (prompt('Enter your name'));
+            const height = parseFloat(prompt("Enter your height in cm:"));
+            const weight = parseFloat(prompt("Enter your weight in kg:"));
+
+            const heightInMeters = height / 100;
+            const BMIValue = weight / (heightInMeters * heightInMeters);
+
+            return {name,BMIValue:BMIValue.toFixed(2)};
+        }
+
+        const result = BMI();
+        alert(`Hello ${result.name}! Your BMI is ${result.BMIValue}`);
+        console.log(`Hello ${result.name}! Your BMI is ${result.BMIValue}`);
+    </script>
+</body>
+
+</html>
+
+
+
