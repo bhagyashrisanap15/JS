@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sum of Two Numbers</title>
+    <style>
+        body {
+            background-color: #f5efe6;
+        }
+        .app_heading {
+            text-align: center;
+            color: #fff;
+            font-size: 50px;
+        }
+        .container {
+            border: 1px solid #000;
+            width: 400px;
+            display: block;
+            height: 250px;
+            margin:0 auto;
+            margin-top: 20px;
+            padding: 40px 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: plum;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .btn {
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 180px;
+            font-size: 28px;
+            margin: 10px 20px;
+        }
+        .btn_container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        @media screen and  (max-width:700px) {
+            .container {
+                width: 90%;
+            }
+            .btn {
+                width: 140px;
+                font-size: 24px;
+                padding: 5px 10px;
+            }
+            .img-bulb {
+                width: 150px;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="app_heading">Bulb Toggler</h1>
+    <div class="container">
+        <img src="off.png" class="img-bulb" id="img-bulb"/>
+        <div class="btn_container">
+            <button class="btn btn-off">Turn Off</button>
+            <button class="btn btn-on">Turn On</button>
+    
+
+    <script>
+        function Togglerbulb(state) {
+            const imgBulb = document.getElementById("img-bulb")
+            if (state === "On") {
+                imgBulb.src = "On.png";
+            }
+            else {
+                imgBulb.src = "Off.png";
+            }
+        }
+     
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>document object model</title>
+</head>
+
+<body>
+    <p id="greeting">Hello, Guest</p>
+     <p>This is second paragraph</p>
+      <p class="text">This is third paragraph</p>
+       <p class="text">This is fourth paragraph</p>
+        <p id="greeting">This is simple div element paragraph</p>
+         <p>hello, we are learning DOM manipulation.</p>
+
+    <button onclick="goodmorning()">goodmorning</button>
+    <button onclick="goodEvening()">goodEvening</button>
+
+<script>
+    function goodmorning() {
+        const greetingElement = document.getElementById("greeting");
+        greetingElement.innerText = "Good Morning ,user!";
+    }
+
+     function goodEvening() {
+        const greetingElement = document.getElementById("greeting");
+        greetingElement.innerText = "Good Evening ,user!";    
+    }
+</script>
+</body>
+</html>
