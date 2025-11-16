@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Roller </title>
+    <style>
+        .dice-container {
+            border: 1px solid black;
+            max-width: fit-content;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        #roll-button {
+            background-color: #000;
+            color: #fff;
+            font-size: 20px;
+            padding: 5px 20px;
+            min-width: 150px;
+            border-radius: 40px;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .dice-image {
+            height: 200px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dice Roller </h1>
+
+    <div class="dice-container">
+        <img sec="" alt="Dice" id="dice-image"/>
+        <button id="roll-button" onclick="rollDice()">Roll</button>
+    </div>
+
+    <script>
+        function rollDice() {
+            const imgElement = document.getElementById("dice-image");
+            const resultElement =document.getElementById("result");
+
+            const randomNum = math.floor(math.random() * 6 ) + 1;
+
+            resultElement.innerText = `Hurray! You rolled the dice and got: ${resultNum}`"
+            if (randomNum == 1) {
+                imgElement.src = "";
+            }
+            else if (randomNum == 2) {
+                imgElement.src = "";   
+            }
+             else if (randomNum == 3) {
+                imgElement.src = "";   
+            }
+             else if (randomNum == 4) {
+                imgElement.src = "";   
+            }
+             else if (randomNum == 5) {
+                imgElement.src = "";   
+            }
+             else if {
+                imgElement.src = "";   
+            }
+        }
+    </script>
+
+
+</body>
+</html>

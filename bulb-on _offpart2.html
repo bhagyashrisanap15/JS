@@ -40,14 +40,7 @@
             width: 180px;
             font-size: 28px;
             margin: 10px 20px;
-        }
-
-        .btn_on {
-            background-color: #9ae66e;
-        }
-
-        .btn_off {
-            background-color: #6d94c5;
+            background-color: #4caf50;
         }
 
         .btn_container {
@@ -74,26 +67,37 @@
     </style>
 </head>
 
-<body>
+<body id="app-container">   <!-- FIXED: added id so JS can select it -->
     <h1 class="app_heading">Bulb Toggler</h1>
 
-    <div class="container">
+    <div class="container" id="bulb-container">
         <img src="images/lightbulb (1).png" class="img-bulb" id="img-bulb" />
 
-        <div class="btn_container">
-            <button class="btn btn_off" onclick="bulbOff()">Turn Off</button>
-            <button class="btn btn_on" onclick="bulbOn()">Turn On</button>
-        </div>
+        <button class="btn btn_on" onclick="toggleBulb()">Toggle Bulb</button>
     </div>
 
     <script>
-        function bulbOn() {
-             document.getElementById("img-bulb").src = "images/lightbulb.png";
-            
-        }
+        const bodyElement = document.getElementById("app-container");
+        const headingElement = document.querySelector(".app_heading");
+        const bulbContainerElement = document.getElementById("bulb-container");
+        const bulbImgElement = document.getElementById("img-bulb");
 
-        function bulbOff() {
-            document.getElementById("img-bulb").src = "images/lightbulb (1).png";
+        let bulbState = "off";
+
+        function toggleBulb() {
+            bulbState = bulbState === "off" ? "on" : "off";
+
+            if (bulbState === "on") {
+                bodyElement.style.backgroundColor = "#fbe3de";
+                headingElement.style.color = "#000000";
+                bulbContainerElement.style.backgroundColor = "#fff2e6";
+                bulbImgElement.src = "images/lightbulb.png";
+            } else {
+                bodyElement.style.backgroundColor = "#757575";
+                headingElement.style.color = "#ffffff";
+                bulbContainerElement.style.backgroundColor = "#999999";
+                bulbImgElement.src = "images/lightbulb (1).png";
+            }
         }
     </script>
 
