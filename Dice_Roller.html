@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Dice Roller </title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width" 
+    initial-scale="1.0"/>
+    <title>Dice Roller</title>
     <style>
         .dice-container {
             border: 1px solid black;
@@ -9,6 +12,7 @@
             padding: 10px 20px;
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
         #roll-button {
             background-color: #000;
@@ -28,42 +32,45 @@
     </style>
 </head>
 <body>
-    <h1>Dice Roller </h1>
+
+    <h1>Dice Roller</h1>
 
     <div class="dice-container">
-        <img sec="" alt="Dice" id="dice-image"/>
+        <img src="images/logo_dice.png" alt="Dice" id="dice-image" class="dice-image"/>
+        <p id="result"></p>
         <button id="roll-button" onclick="rollDice()">Roll</button>
     </div>
 
     <script>
         function rollDice() {
             const imgElement = document.getElementById("dice-image");
-            const resultElement =document.getElementById("result");
+            const resultElement = document.getElementById("result");
 
-            const randomNum = math.floor(math.random() * 6 ) + 1;
+            const randomNum = Math.floor(Math.random() * 6) + 1;
 
-            resultElement.innerText = `Hurray! You rolled the dice and got: ${resultNum}`"
-            if (randomNum == 1) {
-                imgElement.src = "";
-            }
+            resultElement.innerText = `Hurray! You rolled the dice and got: ${randomNum}`;
+
+
+              if (randomNum == 1) {
+                imgElement.src = "./images/dice 1.png";
+            } 
             else if (randomNum == 2) {
-                imgElement.src = "";   
+                imgElement.src = "./images/dice 2.png";   
             }
-             else if (randomNum == 3) {
-                imgElement.src = "";   
+            else if (randomNum == 3) {
+                imgElement.src = "./images/dice 3.png";   
             }
-             else if (randomNum == 4) {
-                imgElement.src = "";   
+            else if (randomNum == 4) {
+                imgElement.src = "./images/dice 4.png";   
             }
-             else if (randomNum == 5) {
-                imgElement.src = "";   
+            else if (randomNum == 5) {
+                imgElement.src = "./images/dice 5.png";   
             }
-             else if {
-                imgElement.src = "";   
+            else {  // randomNum == 6
+                imgElement.src = "./images/dice 6.png";   
             }
         }
     </script>
-
 
 </body>
 </html>
