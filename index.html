@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Converter</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f2fd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+       .box {
+            background: white;
+            padding: 20px;
+            width: 300px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 8px 20px;
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        h3 {
+            margin-top: 15px;
+            color: #1976d2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>CM to Inches</h2>
+        <input type="number" id="cm" placeholder="Enter centimeters">
+        <br>
+        <button onclick="convert()">Convert</button>
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function convert() {
+            let cm = document.getElementById("cm").value;
+            if (cm === "") {
+                document.getElementById("result").innerHTML = "Enter a value!";
+            } else {
+                let inches = cm / 2.54;
+                document.getElementById("result").innerHTML =
+                    cm + " cm = " + inches.toFixed(2) + " inches";
+            }
+        }
+    </script>
+</body>
+</html>
