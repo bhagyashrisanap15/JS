@@ -6,19 +6,28 @@
     initial-scale="1.0"/>
     <title>Dice Roller</title>
     <style>
-        .dice-container {
-            border: 1px solid black;
-            max-width: fit-content;
-            padding: 10px 20px;
+        body {
+            margin: 0;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
+            align-content: center;
+        }
+        .dice-container {
+           text-align: center;
+           padding: 20px;
+           border: 1px solid#ccc;
+           border-radius: 12px;
+           background-color: aliceblue;
+           height: 450px;
+           width: 400px;
+           margin-top: 100px;
         }
         #roll-button {
             background-color: #000;
             color: #fff;
             font-size: 20px;
-            padding: 5px 20px;
+            padding: 8px 20px;
             min-width: 150px;
             border-radius: 40px;
             border: none;
@@ -29,13 +38,17 @@
             height: 200px;
             object-fit: contain;
         }
+        .h1{
+            text-align: center;
+            color: #000;
+            font-size: 50px;
+            
+        }
     </style>
 </head>
 <body>
-
-    <h1>Dice Roller</h1>
-
-    <div class="dice-container">
+       <div class="dice-container">
+        <h1 class="h1">Dice Roller</h1>
         <img src="images/logo_dice.png" alt="Dice" id="dice-image" class="dice-image"/>
         <p id="result"></p>
         <button id="roll-button" onclick="rollDice()">Roll</button>
@@ -49,9 +62,8 @@
             const randomNum = Math.floor(Math.random() * 6) + 1;
 
             resultElement.innerText = `Hurray! You rolled the dice and got: ${randomNum}`;
-
-
-              if (randomNum == 1) {
+          
+            if (randomNum == 1) {
                 imgElement.src = "./images/dice 1.png";
             } 
             else if (randomNum == 2) {
@@ -71,6 +83,5 @@
             }
         }
     </script>
-
 </body>
 </html>

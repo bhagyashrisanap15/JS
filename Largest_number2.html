@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width" 
+    initial-scale="1.0"/>
+    <title>Largest Number in Array</title>
+    
+</head>
+<body>
+     <script>
+        const numbers = [35, 40, 10, 50, 12, 23, 67, 54, 98];
+
+        let largest = numbers[0];
+
+        for(let i = 0; i < numbers.length; i++) {
+            if (numbers[i] > largest) {
+               largest = numbers[i];
+            }
+        }
+            console.log (`the largest number is: ${largest}`);
+            
+ </script>
+</body>
+</html>

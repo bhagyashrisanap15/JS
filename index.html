@@ -4,100 +4,63 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width" 
     initial-scale="1.0"/>
-    <title>Bulb Toggler</title>
+    <title>Password Show/Hide </title>
     <style>
-        body {
-            background-color: #f5efe6;
-        }
-
-        .app_heading {
-            text-align: center;
-            color: #000;
-            font-size: 50px;
-        }
-
-        .container {
-            border: 1px solid #000;
-            width: 400px;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #e8dfca;
+        body{
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-        }
-
-        .img-bulb {
-            width: 130px;
-            height: 140px;
-        }
-
-        .btn {
-            color: #000;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            width: 180px;
-            font-size: 28px;
-            margin: 10px 20px;
-        }
-
-        .btn_on {
-            background-color: #9ae66e;
-        }
-
-        .btn_off {
-            background-color: #6d94c5;
-        }
-
-        .btn_container {
+            height: 100vh;
+            background-color: #f5f5f5;}
+        .input-password-container {
+            border: 1px solid black;
+            width: 400px;
             display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-
-        @media screen and (max-width: 700px) {
-            .container {
-                width: 90%;
-            }
-
-            .btn {
-                width: 140px;
-                font-size: 24px;
-                padding: 5px 10px;
-            }
-
-            .img-bulb {
-                width: 150px;
-            }
-        }
+            align-items: center;
+            padding: 20px;
+            border-radius: 5px;}
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            padding: 8px 10px; }
+        .icon-toggle-password {
+            padding: auto;
+            height: 40px;
+            cursor: pointer; }
+        .input-password {
+            padding: 8px 10px;
+            border: none;
+            width: 340px; }
+        .input-password:focus {
+            outline: none; }
     </style>
 </head>
-
 <body>
-    <h1 class="app_heading">Bulb Toggler</h1>
-
-    <div class="container">
-        <img src="images/lightbulb (1).png" class="img-bulb" id="img-bulb" />
-
-        <div class="btn_container">
-            <button class="btn btn_off" onclick="bulbOff()">Turn Off</button>
-            <button class="btn btn_on" onclick="bulbOn()">Turn On</button>
+    <div class="input-password-container">
+        <div class="input-wrapper">
+        <input type="password" class="input-password" id="input-password" placeholder="Enter Password"/>
+        <img src="images/monkey.png" id="toggle-password" class="icon-toggle-password" onclick="togglepassword()"/>
         </div>
     </div>
 
-    <script>
-        function bulbOn() {
-             document.getElementById("img-bulb").src = "images/lightbulb.png";
-            
-        }
+<script>
+    function togglepassword() {
+        const imgElement = document.getElementById("toggle-password");
+        const inputElement = document.getElementById("input-password");
 
-        function bulbOff() {
-            document.getElementById("img-bulb").src = "images/lightbulb (1).png";
+        if (imgElement.src.includes("monkey.png")) {
+            inputElement.type = "text";
+            imgElement.src = "images/monkey (1).png";
+        } else {
+            inputElement.type = "password";
+            imgElement.src = "images/monkey.png";
         }
-    </script>
+        /* 
+        const isShow = imgElement.src.includes("monkey.png");
 
+        inputElement.type = isShow ? "text" : "password";
+        imgElement.src = isShow = isShow ? "images/monkey (1).png" : "monkey.png"; */
+    }
+</script>
 </body>
 </html>
