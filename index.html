@@ -1,21 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
-    <title>my js files</title>
-
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width" 
+    initial-scale="1.0"/>
+    <title>Password Show/Hide </title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .input-password-container {
+            border: 1px solid black;
+            width: 400px;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-radius: 5px;
+        
+        }
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            padding: 8px 10px;
+            
+           
+        }
+        .icon-toggle-password {
+            padding: auto;
+            height: 40px;
+            cursor: pointer;
+        }
+        .input-password {
+            padding: 8px 10px;
+            border: none;
+            width: 340px;
+           
+      A  }
+        .input-password:focus {
+            outline: none;
+        }
+    </style>
 </head>
-
 <body>
-    <ul>
-        <li><a href="password Toggle_form/">password</a></li>
-        <li><a href="Dice_Roller/">Dice_Roller</a></li>
-        <li><a href="bulb_0n_off. model/">bulb_0n_off</a></li>
-    </ul>
+    <div class="input-password-container">
+        <div class="input-wrapper">
+        <input type="password" class="input-password" id="input-password" placeholder="Enter Password"/>
+        <img src="images/monkey.png" id="toggle-password" class="icon-toggle-password" onclick="togglepassword()"/>
+        </div>
+    </div>
 
+<script>
+    function togglepassword() {
+        const imgElement = document.getElementById("toggle-password");
+        const inputElement = document.getElementById("input-password");
 
+        if (imgElement.src.includes("monkey.png")) {
+            inputElement.type = "text";
+            imgElement.src = "images/monkey (1).png";
+        } else {
+            inputElement.type = "password";
+            imgElement.src = "images/monkey.png";
+        }
+        /* 
+        const isShow = imgElement.src.includes("monkey.png");
+
+        inputElement.type = isShow ? "text" : "password";
+        imgElement.src = isShow = isShow ? "images/monkey (1).png" : "monkey.png"; */
+    }
+</script>
 </body>
-
 </html>
