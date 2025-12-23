@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Theme Toggle</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            color: #000;
+            font-family: Arial, sans-serif;
+            transition: 0.3s;
+        }
+
+        .container {
+            width: 300px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            text-align: center;
+            background-color: inherit;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .theme-toggle {
+            margin-top: 15px;
+            border-radius: 20px;
+            padding: 5px 12px;
+            cursor: pointer;
+            display: inline-block;
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body onload="renderTheme(); showDisplayNameIfAlreadyStored();">
+
+    <div class="container">
+
+        <input type="text" placeholder="Enter your name" id="input-name"/>
+        <button onclick="saveUserDetails()" id="btn-submit">Submit</button>
+
+        <h2>Welcome, <span id="text-user-name">Guest</span></h2>
+
+        <button onclick="logout()">Logout</button>
+
+        <div id="theme-toggle" class="theme-toggle" onclick="toggleTheme()">
+            <span id="icon-light">🌞</span>
+            <span id="icon-dark" style="display:none;">🌙</span>
+        </div>
+
+    </div>
+
+    <script>
+        const inputElement = document.getElementById("input-name");
+        const userNameElement = document.getElementById("text-user-name");
+        const btnSubmit = document.getElementById("btn-submit");
+        const iconLight = document.getElementById("icon-light");
+        const iconDark = document.getElementById("icon-dark");
+        const themeToggle = document.getElementById("theme-toggle");
+
+        function saveUserDetails() {
+            const name = inputElement.value.trim();
+            if (name) {
+                localStorage.setItem("userName", name);
+                userNameElement.innerText = name;
+                inputElement.style.display = "none";
+                btnSubmit.style.display = "none";
+            } else {
+                alert("Please enter your name");
+            }
+        }
+
+        function showDisplayNameIfAlreadyStored() {
+            const storedName = localStorage.getItem("userName");
+            if (storedName) {
+                userNameElement.innerText = storedName;
+                inputElement.style.display = "none";
+                btnSubmit.style.display = "none";
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem("userName");
+            location.reload();
+        }
+
+        function toggleDark() {
+            document.body.style.backgroundColor = "#000";
+            document.body.style.color = "#fff";
+            iconLight.style.display = "none";
+            iconDark.style.display = "inline";
+            localStorage.setItem("theme", "dark");
+        }
+
+        function toggleLight() {
+            document.body.style.backgroundColor = "#fff";
+            document.body.style.color = "#000";
+            iconLight.style.display = "inline";
+            iconDark.style.display = "none";
+            localStorage.setItem("theme", "light");
+        }
+
+        function toggleTheme() {
+            localStorage.getItem("theme") === "dark" ? toggleLight() : toggleDark();
+        }
+
+        function renderTheme() {
+            localStorage.getItem("theme") === "dark" ? toggleDark() : toggleLight();
+        }
+    </script>
+
+</body>
+</html>
+
+
