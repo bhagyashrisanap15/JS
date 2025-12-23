@@ -49,7 +49,7 @@
     <div class="input-password-container">
         <div class="input-wrapper">
         <input type="password" class="input-password" id="input-password" placeholder="Enter Password"/>
-        <img src="images/monkey.png" id="toggle-password" class="icon-toggle-password" onclick="togglepassword()"/>
+        <img src="../images/monkey.png" id="toggle-password" class="icon-toggle-password" onclick="togglepassword()"/>
         </div>
     </div>
 
@@ -60,10 +60,10 @@
 
         if (imgElement.src.includes("monkey.png")) {
             inputElement.type = "text";
-            imgElement.src = "images/monkey (1).png";
+            imgElement.src = "../images/monkey (1).png";
         } else {
             inputElement.type = "password";
-            imgElement.src = "images/monkey.png";
+            imgElement.src = "../images/monkey.png";
         }
         /* 
         const isShow = imgElement.src.includes("monkey.png");

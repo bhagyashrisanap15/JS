@@ -49,7 +49,7 @@
 <body>
        <div class="dice-container">
         <h1 class="h1">Dice Roller</h1>
-        <img src="images/logo_dice.png" alt="Dice" id="dice-image" class="dice-image"/>
+        <img src="../images/logo_dice.png" alt="Dice" id="dice-image" class="dice-image"/>
         <p id="result"></p>
         <button id="roll-button" onclick="rollDice()">Roll</button>
     </div>
@@ -64,22 +64,22 @@
             resultElement.innerText = `Hurray! You rolled the dice and got: ${randomNum}`;
           
             if (randomNum == 1) {
-                imgElement.src = "./images/dice 1.png";
+                imgElement.src = "../images/dice 1.png";
             } 
             else if (randomNum == 2) {
-                imgElement.src = "./images/dice 2.png";   
+                imgElement.src = "../images/dice 2.png";   
             }
             else if (randomNum == 3) {
-                imgElement.src = "./images/dice 3.png";   
+                imgElement.src = "../images/dice 3.png";   
             }
             else if (randomNum == 4) {
-                imgElement.src = "./images/dice 4.png";   
+                imgElement.src = "../images/dice 4.png";   
             }
             else if (randomNum == 5) {
-                imgElement.src = "./images/dice 5.png";   
+                imgElement.src = "../images/dice 5.png";   
             }
             else {  // randomNum == 6
-                imgElement.src = "./images/dice 6.png";   
+                imgElement.src = "../images/dice 6.png";   
             }
         }
     </script>
