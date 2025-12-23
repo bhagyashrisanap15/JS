@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>String Operations</title>
+
+    <style>
+        .btn-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .app-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .text-input {
+            display: block;
+            margin: 20px auto;
+            width: 50%;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        .btn-action {
+            background-color: black;
+            color: antiquewhite;
+            border: none;
+            padding: 6px 10px;
+            font-size: 15px;
+            min-width: 100px;
+            cursor: pointer;
+            border-radius: 50px;
+        }
+        #txt-result {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3 class="app-title">String Operations</h3>
+
+    <textarea
+        id="inputText"
+        rows="5"
+        cols="50"
+        placeholder="Enter your text here...!"
+        class="text-input"
+        onkeyup="actionCharCount()"
+    ></textarea>
+
+    <p id="txt-result">Result:</p>
+
+    <div class="btn-container">
+        <button class="btn-action" onclick="actionLowercase()">Lowercase</button>
+        <button class="btn-action" onclick="actionUppercase()">Uppercase</button>
+        <button class="btn-action" onclick="actionCharCount()">Count Characters</button>
+        <button class="btn-action" onclick="actionWordsCount()">Count Words</button>
+        <button class="btn-action" onclick="actionReverse()">Reverse String</button>
+    </div>
+
+    <script>
+        const textInput = document.getElementById("inputText");
+        const txtResult = document.getElementById("txt-result");
+
+        function actionLowercase() {
+            textInput.value = textInput.value.toLowerCase();
+        }
+
+        function actionUppercase() {
+            textInput.value = textInput.value.toUpperCase();
+        }
+
+        function actionCharCount() {
+            txtResult.innerText = `Char Count: ${textInput.value.length}`;
+        }
+
+        function actionWordsCount() {
+            const wordsArray = textInput.value.trim().split(/\s+/);
+            const count = textInput.value.trim() === "" ? 0 : wordsArray.length;
+            txtResult.innerText = `Word Count: ${count}`;
+        }
+
+        function actionReverse() {
+            const reversed = textInput.value.split("").reverse().join("");
+            textInput.value = reversed;
+        }
+    </script>
+
+</body>
+</html>
