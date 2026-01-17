@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Card</title>
+  <link rel="stylesheet" href="../css/course.css">
+</head>
+<style>
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  padding: 40px;
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+/* Filter Pills */
+.pill {
+  padding: 10px 16px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pill.active {
+  background: #e8f0fe;
+  border-color: #4285f4;
+  color: #1a73e8;
+}
+
+/* Card Container (IMPORTANT) */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  width: 330px;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+/* Image */
+.card-img {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #f0f0f0;
+}
+
+/* Tag */
+.tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #e6f4ea;
+  color: #2e7d32;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Title */
+.card h2 {
+  margin: 12px 0 8px;
+  font-size: 20px;
+}
+
+/* Description */
+.desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Info Section */
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin: 14px 0;
+}
+
+.info small {
+  color: #777;
+  font-size: 12px;
+}
+
+.info p {
+  margin-top: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Author */
+.author {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #111;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-container {
+    justify-content: center;
+  }
+}
+
+</style>
+<body>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <button class="pill">☰ Filter & Sort</button>
+    <button class="pill">Topic ▾</button>
+    <button class="pill">Duration ▾</button>
+    <button class="pill">Learning Product ▾</button>
+    <button class="pill">Language ▾</button>
+    <button class="pill active">Level ▾</button>
+  </div>
+
+  <!-- Cards Container -->
+  <div class="card-container">
+
+    <!-- Python -->
+    <div class="card">
+      <img src="../images/python.png" class="card-img" alt="Python Course">
+      <span class="tag">Python</span>
+      <h2>Learn Python</h2>
+      <p class="desc">
+        Python is a popular programming language. It is used to create web applications and automate tasks.
+      </p>
+
+      <div class="info">
+        <div>
+          <small>Level</small>
+          <p>Beginner</p>
+        </div>
+        <div>
+          <small>Duration</small>
+          <p>3–6 Months</p>
+        </div>
+        <div>
+          <small>Language</small>
+          <p>Hinglish</p>
+        </div>
+      </div>
+
+      <p class="author">👩‍🏫 Al Sweigart</p>
+      <button onclick="knowMore()">Start learning now →</button>
+    </div>
+
+    <!-- Digital Marketing -->
+    <div class="card">
+      <img src="../images/digital-strategy.png" class="card-img" alt="Digital Marketing Course">
+      <span class="tag">Digital Marketing</span>
+      <h2>Learn Digital Marketing</h2>
+      <p class="desc">
+        Learn SEO, social media, and content marketing to grow online businesses.
+      </p>
+
+      <div class="info">
+        <div>
+          <small>Level</small>
+          <p>Beginner</p>
+        </div>
+        <div>
+          <small>Duration</small>
+          <p>2–3 Months</p>
+        </div>
+        <div>
+          <small>Language</small>
+          <p>Hinglish</p>
+        </div>
+      </div>
+
+      <p class="author">👩‍🏫 Neil Patel</p>
+      <button onclick="knowMore()">Start learning now →</button>
+    </div>
+
+    <!-- AI -->
+    <div class="card">
+      <img src="../images/ai.png" class="card-img" alt="AI Course">
+      <span class="tag">AI</span>
+      <h2>Learn Artificial Intelligence</h2>
+      <p class="desc">
+        Learn how machines think, learn, and make decisions like humans.
+      </p>
+
+      <div class="info">
+        <div>
+          <small>Level</small>
+          <p>Beginner</p>
+        </div>
+        <div>
+          <small>Duration</small>
+          <p>2–3 Months</p>
+        </div>
+        <div>
+          <small>Language</small>
+          <p>Hinglish</p>
+        </div>
+      </div>
+
+      <p class="author">👩‍🏫 Yoshua Bengio</p>
+      <button onclick="knowMore()">Start learning AI →</button>
+    </div>
+
+    <!-- Cyber Security -->
+    <div class="card">
+      <img src="../images/cyber-security.png" class="card-img" alt="Cyber Security Course">
+      <span class="tag">Cyber Security</span>
+      <h2>Learn Cyber Security</h2>
+      <p class="desc">
+        Protect systems from cyber threats, ethical hacking, and digital forensics.
+      </p>
+
+      <div class="info">
+        <div>
+          <small>Level</small>
+          <p>Beginner</p>
+        </div>
+        <div>
+          <small>Duration</small>
+          <p>3–4 Months</p>
+        </div>
+        <div>
+          <small>Language</small>
+          <p>Hinglish</p>
+        </div>
+      </div>
+
+      <p class="author">👩‍🏫 Michael Gregg</p>
+      <button onclick="knowMore()">Start learning now →</button>
+    </div>
+
+    <!-- Data Analytics -->
+    <div class="card">
+      <img src="../images/exploration.png" class="card-img" alt="Data Analytics Course">
+      <span class="tag">Data Analytics</span>
+      <h2>Learn Data Analytics</h2>
+      <p class="desc">
+        Analyze and visualize data using Excel, SQL, Python, and Tableau.
+      </p>
+
+      <div class="info">
+        <div>
+          <small>Level</small>
+          <p>Beginner</p>
+        </div>
+        <div>
+          <small>Duration</small>
+          <p>4–6 Months</p>
+        </div>
+        <div>
+          <small>Language</small>
+          <p>Hinglish</p>
+        </div>
+      </div>
+
+      <p class="author">👩‍🏫 Wes McKinney</p>
+      <button onclick="knowMore()">Start learning now →</button>
+    </div>
+
+    <!-- English Speaking -->
+    <div class="card">
+      <img src="../images/interaction.png" class="card-img" alt="English Speaking Course">
+      <span class="tag">English Speaking</span>
+      <h2>Improve English Speaking</h2>
+      <p class="desc">
+        Improve vocabulary, pronunciation, and confidence through practice.
+      </p>
+
+      <div class="info">
+        <div>
+          <small>Level</small>
+          <p>Beginner</p>
+        </div>
+        <div>
+          <small>Duration</small>
+          <p>2–3 Months</p>
+        </div>
+        <div>
+          <small>Language</small>
+          <p>Hinglish</p>
+        </div>
+      </div>
+
+      <p class="author">👩‍🏫 Norman Lewis</p>
+      <button onclick="knowMore()">Start learning now →</button>
+    </div>
+
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
